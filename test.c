@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:58:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/08 14:34:48 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:12:46 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 #include <math.h>
 
 int print_img(t_data *data);
+int handle_key(int keysym, t_data *data);
+
 
 int main ()
 {
 	t_data p_mlx;
 
-	p_mlx.mlx =mlx_init();
+	p_mlx.mlx = mlx_init();
 	p_mlx.win = mlx_new_window(p_mlx.mlx, W_WIDTH, W_HEIGHT, "second window");
 
 
@@ -30,14 +32,24 @@ int main ()
 	//retorna endereço do array de pixel da imagem, navego por cada byte por vez "sizeof(char)"
 	//cada pixel tem tamanho de bpp
 	
-	mlx_loop_hook(p_mlx.mlx, &print_img, &p_mlx);
-	
-	mlx_loop(p_mlx.mlx);
-
-	mlx_destroy_image(p_mlx.win, p_mlx.img.mlx_img);
-	mlx_destroy_display(p_mlx.win);
-	free(p_mlx.mlx);
+		mlx_loop_hook(p_mlx.mlx, &print_img, &p_mlx);
+		mlx_hook(p_mlx.win, KeyPress, KeyPressMask, handle_key, &p_mlx);
+		mlx_loop(p_mlx.mlx);
 }
+
+int handle_key(int keysym, t_data *data)
+	{
+		if(keysym == XK_Escape)
+		{
+			//data->win = NULL;
+			mlx_destroy_image(data->mlx, data->img.mlx_img);
+			mlx_destroy_window(data->mlx, data->win);
+			mlx_destroy_display(data->mlx);
+			free(data->mlx);
+			exit(0);
+		}
+		return (0);
+	}
 
 void	img_pix_put(t_img *img, int x, int y, int color)
 {
@@ -66,21 +78,22 @@ int print_img(t_data *data)
 		return (1);
 	
 	//apenas testes, aqui entro com as funções para desenhar meus fractais
-	while(i <200)
+	while(i <100)
 	{
-		// if(pow(i, 2) >= W_WIDTH || pow(i, 2) >= W_HEIGHT)
-		// 	break;
-		img_pix_put(&data->img, i, (W_HEIGHT)-i-1, 0xFF00);
-		// img_pix_put(&data->img, i+(pow(i, 2)), (W_HEIGHT)-pow(i,2)-1, 0xFF00);
+		if(pow(i, 2) >= W_HEIGHT || pow(i, 2) >= W_HEIGHT)
+		 	break;
+		img_pix_put(&data->img, i, (W_HEIGHT)-pow(i,2), 0xFF00);
+		//img_pix_put(&data->img, i+(pow(i, 2)), (W_HEIGHT)-pow(i,2)-1, 0xFF00);
 		i++;
 	}
-	while(i <300)
-	{
-		if(i >= W_WIDTH || i >= W_HEIGHT)
-			break;
-		img_pix_put(&data->img, i, i-(W_HEIGHT-120), 0xFF00);
-		// img_pix_put(&data->img, i+(pow(i, 2)), (W_HEIGHT)-pow(i,2)-1, 0xFF00);
-		i++;
-	}
+	// while(i <300)
+	// {
+	// 	if(i >= W_WIDTH || i >= W_HEIGHT)
+	// 		break;
+	// 	img_pix_put(&data->img, i, i-(W_HEIGHT-120), 0xFF00);
+	// 	// img_pix_put(&data->img, i+(pow(i, 2)), (W_HEIGHT)-pow(i,2)-1, 0xFF00);
+	// 	i++;
+	// }
 	mlx_put_image_to_window(data->mlx, data->win, data->img.mlx_img, 0, 0);
+	return (0);
 }
