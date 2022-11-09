@@ -6,10 +6,12 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/09 11:08:58 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:25:52 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HEADER_H
+#define HEADER_H
 #include <mlx.h>
 #include <stdlib.h>
 #include <X11/keysym.h>
@@ -33,3 +35,7 @@ typedef struct s_data
 	void	*win;
 	t_img	img;
 } t_data;
+
+int handle_key(int keysym, t_data *data);
+
+#endif
