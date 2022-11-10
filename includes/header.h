@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/09 14:25:52 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:48:21 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_data
 	t_img	img;
 } t_data;
 
-int handle_key(int keysym, t_data *data);
+int		handle_key(int keysym, t_data *data);
+void	window_init(t_data *p_mlx);
 
 #endif

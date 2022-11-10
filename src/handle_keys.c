@@ -6,13 +6,13 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:33 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/09 14:20:33 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:57:12 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-int destroy_all(t_data *data)
+static int destroy_all(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img.mlx_img);
 	mlx_destroy_window(data->mlx, data->win);
