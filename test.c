@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:58:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/09 13:12:46 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/15 00:47:08 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,14 @@ int print_img(t_data *data)
 		return (1);
 	
 	//apenas testes, aqui entro com as funções para desenhar meus fractais
-	while(i <100)
-	{
-		if(pow(i, 2) >= W_HEIGHT || pow(i, 2) >= W_HEIGHT)
-		 	break;
-		img_pix_put(&data->img, i, (W_HEIGHT)-pow(i,2), 0xFF00);
-		//img_pix_put(&data->img, i+(pow(i, 2)), (W_HEIGHT)-pow(i,2)-1, 0xFF00);
-		i++;
-	}
+	// while(i <100)
+	// {
+	// 	if(pow(i, 2) >= W_HEIGHT || pow(i, 2) >= W_HEIGHT)
+	// 	 	break;
+	// 	img_pix_put(&data->img, i, (W_HEIGHT)-pow(i,2), 0xFF00);
+	// 	//img_pix_put(&data->img, i+(pow(i, 2)), (W_HEIGHT)-pow(i,2)-1, 0xFF00);
+	// 	i++;
+	// }
 	// while(i <300)
 	// {
 	// 	if(i >= W_WIDTH || i >= W_HEIGHT)
@@ -97,3 +97,35 @@ int print_img(t_data *data)
 	mlx_put_image_to_window(data->mlx, data->win, data->img.mlx_img, 0, 0);
 	return (0);
 }
+
+// double MinRe = -1.5;
+// double MaxRe = .5;
+// double MinIm = -1.5;
+// double MaxIm = 1.5;//MinIm+(MaxRe-MinRe)*W_HEIGHT/W_WIDTH;
+// double Re_factor = (MaxRe-MinRe)/(W_WIDTH-1);
+// double Im_factor = (MaxIm-MinIm)/(W_HEIGHT-1);
+// unsigned MaxIterations = 30;
+
+// for(unsigned y=0; y<W_HEIGHT; ++y)
+// {
+//     double c_im = MaxIm - y*Im_factor;
+//     for(unsigned x=0; x<W_WIDTH; ++x)
+//     {
+//         double c_re = MinRe + x*Re_factor;
+
+//         double Z_re = c_re, Z_im = c_im;
+//         char isInside = 1;
+//         for(unsigned n=0; n<MaxIterations; ++n)
+//         {
+//             double Z_re2 = Z_re*Z_re, Z_im2 = Z_im*Z_im;
+//             if(Z_re2 + Z_im2 > 4)
+//             {
+//                 isInside = 0;
+//                 break;
+//             }
+//             Z_im = 2*Z_re*Z_im + c_im;
+//             Z_re = Z_re2 - Z_im2 + c_re;
+//         }
+//         if(isInside) { img_pix_put(&data->img, x, y, 0x0FF0); }
+//     }
+// }

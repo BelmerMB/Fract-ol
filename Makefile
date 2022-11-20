@@ -1,5 +1,7 @@
-FLAGS	= -lm -lmlx -lX11 -lXext
+CFLAGS          = -g3 -O3 -Wall -Wextra -Werror
 
-SRCS	= ./src/draw.c ./src/handle_keys.c ./src/window_init.c
+MLXFLAGS        = -lm -Imlx -Lmlx -lmlx -lXext -lX11
+
+SRCS	= ./src/draw.c ./src/handle_keys.c ./src/window_init.c ./src/cal_func.c
 all:
-	cc main.c  ${SRCS} ${FLAGS}
+	cc ${CFLAGS} main.c ${SRCS}  ${MLXFLAGS}

@@ -1,22 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window_init.c                                      :+:      :+:    :+:   */
+/*   cal_func.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 13:40:34 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/13 00:51:21 by emetras-         ###   ########.fr       */
+/*   Created: 2022/11/14 11:30:45 by emetras-          #+#    #+#             */
+/*   Updated: 2022/11/14 11:31:01 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
-
-void window_init(t_data *p_mlx)
-{
-	p_mlx->mlx = mlx_init();
-	p_mlx->win = mlx_new_window(p_mlx->mlx, W_WIDTH, W_HEIGHT, "Mandelbrot");
-	p_mlx->img.mlx_img = mlx_new_image(p_mlx->mlx, W_WIDTH, W_HEIGHT);
-	p_mlx->img.addr = mlx_get_data_addr(p_mlx->img.mlx_img, &p_mlx->img.bpp,
-	&p_mlx->img.line_len, &p_mlx->img.endian);
+double	f_map(double x, double in_min, double in_max, double out_min, double out_max) {
+	return ((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
 }

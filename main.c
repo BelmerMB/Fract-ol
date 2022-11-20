@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:44:59 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/10 10:58:13 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:10:03 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 	t_data	p_mlx;
 
 	window_init(&p_mlx);
-	//mlx_loop_hook();
+	mlx_loop_hook(p_mlx.mlx, &draw, &p_mlx);
 	mlx_hook(p_mlx.win, KeyPress, KeyPressMask, handle_key, &p_mlx);
 	mlx_loop(p_mlx.mlx);
 }
