@@ -1,4 +1,4 @@
-CFLAGS          = -g3 -O3 -Wall -Wextra -Werror
+CFLAGS          = -Wall -Wextra -Werror
 
 MLXFLAGS        = -lm -Imlx -Lmlx -lmlx -lXext -lX11
 

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/20 23:33:40 by emetras-         ###   ########.fr       */
+/*   Created: 2022/11/20 18:32:34 by emetras-          #+#    #+#             */
+/*   Updated: 2022/11/20 23:01:11 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-#define HEADER_H
-#include <mlx.h>
-#include <stdlib.h>
-#include <X11/keysym.h>
-#include <X11/X.h>
-#include <math.h>
-#include "./datas.h"
+#include <stdio.h>
 
-# define W_WIDTH 600
-# define W_HEIGHT 600
-
-int		handle_key(int keysym, t_data *data);
-void	window_init(t_data *p_mlx);
-int		draw(t_data *data);
 double	f_map(double x, double in_min, double in_max, double out_min, double out_max);
 
-#endif
+int main()
+{
+	int x = 0;
+	while (++x <= 50)
+	{
+		printf("Original: %d Map: %f, O_denovo %f \n", x, f_map(x, 0, 600, -2.0, 2.0), f_map(f_map(x, 0, 600, -2.0, 2.0), -2.0, 2.0, 0, 600));	
+	}
+	return (0);
+}
+
+double	f_map(double x, double in_min, double in_max, double out_min, double out_max)
+{
+	return ((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
+}

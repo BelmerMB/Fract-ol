@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   datas.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/20 23:33:40 by emetras-         ###   ########.fr       */
+/*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
+/*   Updated: 2022/11/21 00:36:57 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-#define HEADER_H
-#include <mlx.h>
-#include <stdlib.h>
-#include <X11/keysym.h>
-#include <X11/X.h>
-#include <math.h>
-#include "./datas.h"
+#ifndef DATAS_H
+#define DATAS_H
 
-# define W_WIDTH 600
-# define W_HEIGHT 600
+typedef struct s_img
+{
+	void	*mlx_img;
+	char	*addr;
+	int		bpp;
+	int		line_len;
+	int		endian;
+}	t_img;
 
-int		handle_key(int keysym, t_data *data);
-void	window_init(t_data *p_mlx);
-int		draw(t_data *data);
-double	f_map(double x, double in_min, double in_max, double out_min, double out_max);
+typedef struct s_fractol
+{
+	double	x;
+	double	y;
+	double	r;
+	double	i;
+	double	z;
+	double	z2;
+}	t_num;
+
+typedef struct s_data
+{
+	void	*mlx;
+	void	*win;
+	t_img	img;
+	t_num	var;
+} t_data;
 
 #endif

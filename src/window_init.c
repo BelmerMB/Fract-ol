@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:34 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/13 00:51:21 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/20 23:51:37 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,12 @@ void window_init(t_data *p_mlx)
 	p_mlx->img.mlx_img = mlx_new_image(p_mlx->mlx, W_WIDTH, W_HEIGHT);
 	p_mlx->img.addr = mlx_get_data_addr(p_mlx->img.mlx_img, &p_mlx->img.bpp,
 	&p_mlx->img.line_len, &p_mlx->img.endian);
+}
+
+void var_init(t_num *var)
+{
+	var->x = 0;
+	var->y = 0;
+	var->r = -2.0;
+	var->i = 1.5;
 }
