@@ -1,44 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   datas.h                                            :+:      :+:    :+:   */
+/*   handle_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/22 13:42:50 by emetras-         ###   ########.fr       */
+/*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
+/*   Updated: 2022/11/22 11:11:32 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATAS_H
-#define DATAS_H
-
-typedef struct s_img
-{
-	void	*mlx_img;
-	char	*addr;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_img;
-
-typedef struct s_fractol
-{
-	double	x;
-	double	y;
-	double	r;
-	double	i;
-	double	r_ant;
-	double	i_ant;
-	int		interations;
-}	t_num;
-
-typedef struct s_data
-{
-	void	*mlx;
-	void	*win;
-	t_img	img;
-	t_num	var;
-} t_data;
-
-#endif

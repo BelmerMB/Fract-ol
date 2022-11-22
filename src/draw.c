@@ -6,12 +6,15 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/21 01:24:35 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:03:09 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 #define zoom 0.5
+
+int	f_mandelbrot(t_num *var, int x, int y);
+
 void	img_pix_put(t_img *img, int x, int y, int color)
 {
 	char	*pixel;
@@ -31,37 +34,40 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 	}
 }
 
-int draw(t_data *data)
+int f_fractal(t_data *data)
 {
-	int loop = 0;
-	int cor;
-	while (data->var.y<W_HEIGHT)
+	int	cor;
+	while (data->var.y++ < W_WIDTH) //depois analiso com y=-1
 	{
 		data->var.x = 0;
-		data->var.i = f_map(data->var.y, 0, W_HEIGHT, -1.5, 1.5);
-		while (data->var.x<W_WIDTH)
+		while (data->var.x++ < W_HEIGHT)
 		{
-			data->var.r = f_map(data->var.x, 0, W_HEIGHT, -1.5, 1.5);
-			cor = 1;
-			loop = 0;
-			while (++loop < 50)
-			{
-				data->var.z = pow(data->var.r, 2) - pow(data->var.i, 2);
-				data->var.z2 = (2*data->var.r*data->var.i);
-				if (data->var.z + data->var.z2 >= 1)
-				{
-					cor = 0;
-					break;
-				}
-				data->var.r = data->var.z;
-				data->var.i = data->var.z2;
-			}
-			if(cor)
-				img_pix_put(&data->img, data->var.x, data->var.y, 0XFF00);
-			data->var.x++;
+			cor = f_mandelbrot(&data->var, data->var.x, data->var.y);
+			if(cor) //se retornar valor > 0 printa de azul
+				img_pix_put(&data->img, data->var.x, data->var.y, f_map(cor, 0,49,50,256));
+			else
+				img_pix_put(&data->img, data->var.x, data->var.y, 0);
 		}
-		data->var.y++;
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img.mlx_img, 0, 0);
+	return (0);
+}
+
+int	f_mandelbrot(t_num *var, int x, int y)
+{
+	int	index;
+
+	index = 0;
+	var->r = f_map(x, 0, W_WIDTH, -1.5, 1.5);
+	var->i = f_map(y, 0, W_HEIGHT, -1.5, 1.5);
+	var->r_ant = var->r;
+	var->i_ant = var->r;
+	while (index++ < var->interations)
+	{
+		var->r = ((var->r * var->) - (var->i * var->i)) + var->r_ant; //a² - b² + a_ant 
+		var->i = (2 * var->r * var->i) + var->i_ant; //2*abi + bi_ant
+		if (var->r+var->i > 4)
+			return (index);
+	}
 	return (0);
 }
