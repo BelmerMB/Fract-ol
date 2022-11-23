@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/23 11:03:32 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:28:55 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 int f_fractal(t_data *data)
 {
 	int	cor;
-	while (data->var.y++ < W_WIDTH) //depois analiso com y=-1
+	while (data->var.y++ < W_HEIGHT) //depois analiso com y=-1
 	{
 		data->var.x = 0;
-		while (data->var.x++ < W_HEIGHT)
+		while (data->var.x++ < W_WIDTH)
 		{
 			cor = f_mandelbrot(&data->var, data->var.x, data->var.y);
 			if(cor)
@@ -58,14 +58,14 @@ int	f_mandelbrot(t_num *var, int x, int y)
 	int	index;
 
 	index = 0;
-	var->r_ant = f_map(x, 0, W_WIDTH, -1.5, 1.5);
-	var->i_ant = f_map(y, 0, W_HEIGHT, -1.5, 1.5);
+	var->r_ant = f_map(x, 0, W_HEIGHT, -var->scale, var->scale);
+	var->i_ant = f_map(y, 0, W_WIDTH, -var->scale, var->scale);
 	var->r_const = var->r_ant;
 	var->i_const = var->i_ant;
 	while (index++ < var->interations)
 	{
-		var->r = ((var->r_ant * var->r_ant) - (var->i_ant * var->i_ant));// + var->r_ant; //a² - b² + a_ant 
-		var->i = (2 * var->r_ant * var->i_ant) ;//+ var->i_ant; //2*abi + bi_ant
+		var->r = ((var->r_ant * var->r_ant) - (var->i_ant * var->i_ant));
+		var->i = (2 * var->r_ant * var->i_ant);
 		var->r_ant = var->r + var->r_const;
 		var->i_ant = var->i + var->i_const;
 		if (var->r_ant+var->i_ant > 4)

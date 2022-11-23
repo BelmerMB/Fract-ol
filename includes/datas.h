@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/23 10:48:13 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:24:56 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_fractol
 	double	r_const;
 	double	i_const;
 	int		interations;
+	double	scale;
 }	t_num;
 
 typedef struct s_data

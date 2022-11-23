@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:34 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/23 11:03:56 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:26:21 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void var_init(t_num *var)
 	var->y = 0;
 	var->r = 0;
 	var->i = 0;
-	var->interations = 200;
+	var->interations = 100;
+	var->scale = 1.5;
 }
