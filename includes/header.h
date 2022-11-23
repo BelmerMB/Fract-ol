@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/22 13:10:09 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:17:27 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define W_HEIGHT 600
 
 int		handle_key(int keysym, t_data *data);
-int		f_fractal(t_data *data);
+int		f_fractal	(t_data *data);
 void	window_init(t_data *p_mlx);
 void	var_init(t_num *var);
 double	f_map(double x, double i_min, double i_max, double o_min, double o_max);

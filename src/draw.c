@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/22 14:03:09 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:03:32 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int f_fractal(t_data *data)
 		while (data->var.x++ < W_HEIGHT)
 		{
 			cor = f_mandelbrot(&data->var, data->var.x, data->var.y);
-			if(cor) //se retornar valor > 0 printa de azul
-				img_pix_put(&data->img, data->var.x, data->var.y, f_map(cor, 0,49,50,256));
+			if(cor)
+				img_pix_put(&data->img, data->var.x, data->var.y, f_map(cor, 0,49,50,0XFF));
 			else
 				img_pix_put(&data->img, data->var.x, data->var.y, 0);
 		}
@@ -58,15 +58,17 @@ int	f_mandelbrot(t_num *var, int x, int y)
 	int	index;
 
 	index = 0;
-	var->r = f_map(x, 0, W_WIDTH, -1.5, 1.5);
-	var->i = f_map(y, 0, W_HEIGHT, -1.5, 1.5);
-	var->r_ant = var->r;
-	var->i_ant = var->r;
+	var->r_ant = f_map(x, 0, W_WIDTH, -1.5, 1.5);
+	var->i_ant = f_map(y, 0, W_HEIGHT, -1.5, 1.5);
+	var->r_const = var->r_ant;
+	var->i_const = var->i_ant;
 	while (index++ < var->interations)
 	{
-		var->r = ((var->r * var->) - (var->i * var->i)) + var->r_ant; //a² - b² + a_ant 
-		var->i = (2 * var->r * var->i) + var->i_ant; //2*abi + bi_ant
-		if (var->r+var->i > 4)
+		var->r = ((var->r_ant * var->r_ant) - (var->i_ant * var->i_ant));// + var->r_ant; //a² - b² + a_ant 
+		var->i = (2 * var->r_ant * var->i_ant) ;//+ var->i_ant; //2*abi + bi_ant
+		var->r_ant = var->r + var->r_const;
+		var->i_ant = var->i + var->i_const;
+		if (var->r_ant+var->i_ant > 4)
 			return (index);
 	}
 	return (0);
