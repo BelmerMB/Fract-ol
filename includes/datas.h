@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/23 11:24:56 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:21:21 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ typedef struct s_data
 	void	*win;
 	t_img	img;
 	t_num	var;
-} t_data;
+}	t_data;
 
 #endif

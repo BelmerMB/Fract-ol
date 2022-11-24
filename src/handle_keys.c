@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:33 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/10 10:57:12 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:30:44 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,15 @@ int handle_key(int keysym, t_data *data)
 {
 	if(keysym == XK_Escape)
 		destroy_all(data);
+	else if (keysym == XK_Page_Up)
+	{
+		data->var.scale -= 0.1;
+		f_fractal(data);
+	}
+	else if (keysym == XK_Page_Down)
+	{
+		data->var.scale += 0.1;
+		f_fractal(data);
+	}
 	return (0);
 }

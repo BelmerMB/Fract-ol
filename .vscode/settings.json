@@ -4,6 +4,7 @@
 		"math.h": "c",
 		"header.h": "c",
 		"cmath": "cpp",
-		"*.tcc": "cpp"
+		"*.tcc": "cpp",
+		"datas.h": "c"
 	}
 }
