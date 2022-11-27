@@ -1,3 +1,4 @@
+at progress...
 # fractais
 Welcome to my first **fractal** project. I really like math and this project show me how do work with complex numbers.\
 My first challenge and question was **"what is a complex number?"** and I found that a complex number is a sum of a real number and a imaginary number\
