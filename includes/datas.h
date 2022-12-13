@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/27 17:13:05 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:43:45 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_data
 	void	*win;
 	t_img	img;
 	t_num	var;
+	int	(*fractal_ptr)(t_num *var, int x, int y);
 }	t_data;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/13 11:56:15 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:29:30 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define SCROLL_UP 5
 # define W_WIDTH 800
 # define W_HEIGHT 800
+# define MANDELBROT 'm'
+# define JULIA 'j'
 
 int		f_fractal(t_data *data);
 int		f_mandelbrot(t_num *var, int x, int y);
@@ -31,5 +33,6 @@ void	window_init(t_data *p_mlx);
 void	var_init(t_num *var);
 double	f_map(double x, double i_min, double i_max, double o_min, double o_max);
 int		handle_hooks(t_data *data);
+void	args_check(t_data *data, int argc, char **argv);
 
 #endif

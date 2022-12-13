@@ -5,7 +5,7 @@ OBJ_DIR =	./objects
 LIBFT_DIR =	./printf
 LIBFT =		$(addprefix $(LIBFT_DIR)/, libftprintf.a)
 
-SRC_FILES =	cal_func.c draw.c window_init.c handle_keys.c fractol.c
+SRC_FILES =	cal_func.c draw.c window_init.c handle_keys.c fractol.c handle_args.c
 
 SRC =		$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ =		$(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
