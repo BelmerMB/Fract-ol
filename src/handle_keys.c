@@ -6,13 +6,13 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:33 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/24 18:30:44 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:53:51 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-static int destroy_all(t_data *data)
+static int	destroy_all(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img.mlx_img);
 	mlx_destroy_window(data->mlx, data->win);
@@ -21,19 +21,34 @@ static int destroy_all(t_data *data)
 	exit(0);
 }
 
-int handle_key(int keysym, t_data *data)
+static int	handle_key(int key, t_data *data)
 {
-	if(keysym == XK_Escape)
+	if(key == ESC)
 		destroy_all(data);
-	else if (keysym == XK_Page_Up)
+	else 
+	return (0);
+}
+
+static int	handle_mouse(int key, t_data *data)
+{
+	if (key == SCROLL_DOWN && data->var.scale <= 5.0)
 	{
-		data->var.scale -= 0.1;
+		data->var.scale *= 1.1;
 		f_fractal(data);
 	}
-	else if (keysym == XK_Page_Down)
+	else if (key == SCROLL_UP && data->var.scale >= 0.001)
 	{
-		data->var.scale += 0.1;
+		data->var.scale *= 0.9;
 		f_fractal(data);
 	}
+	return (0);
+}
+
+int	handle_hooks(t_data *data)
+{
+	mlx_hook(data->win, 17, 0, destroy_all, data);
+	mlx_mouse_hook(data->win, handle_mouse, data);
+	mlx_key_hook(data->win, handle_key, data);
+	mlx_loop_hook(data->mlx, f_fractal, data);
 	return (0);
 }

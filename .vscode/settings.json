@@ -5,6 +5,9 @@
 		"header.h": "c",
 		"cmath": "cpp",
 		"*.tcc": "cpp",
-		"datas.h": "c"
+		"datas.h": "c",
+		"keysym.h": "c",
+		"keysymdef.h": "c",
+		"ft_printf.h": "c"
 	}
 }

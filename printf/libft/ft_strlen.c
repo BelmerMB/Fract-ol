@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_args.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/25 10:31:51 by emetras-         ###   ########.fr       */
+/*   Created: 2022/06/02 22:40:39 by emetras-          #+#    #+#             */
+/*   Updated: 2022/06/10 16:56:41 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "libft.h"
 
-void args_check(int argc, char **argv)
+size_t	ft_strlen(const char *s)
 {
+	size_t	index;
+
+	index = 0;
+	while (s[index])
+		index++;
+	return (index);
 }

@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_args.c                                      :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/25 10:31:51 by emetras-         ###   ########.fr       */
+/*   Created: 2022/06/04 01:37:09 by emetras-          #+#    #+#             */
+/*   Updated: 2022/06/06 16:54:24 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "libft.h"
 
-void args_check(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	str = s;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
 }

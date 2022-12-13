@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_args.c                                      :+:      :+:    :+:   */
+/*   ft_ptr_to_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/25 10:31:51 by emetras-         ###   ########.fr       */
+/*   Created: 2022/08/28 19:57:39 by emetras-          #+#    #+#             */
+/*   Updated: 2022/08/28 21:02:55 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../header/ft_printf.h"
 
-void args_check(int argc, char **argv)
+int	ft_print_ptr(unsigned long int nbr)
 {
+	if(!nbr)
+	{
+		return (write(1, "(nil)", 5));
+	}
+	write(1, "0x", 2);
+	return(ft_print_hex(nbr, 'a') + 2);
 }

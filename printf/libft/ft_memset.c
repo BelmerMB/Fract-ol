@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_args.c                                      :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/25 10:31:51 by emetras-         ###   ########.fr       */
+/*   Created: 2022/06/03 23:22:05 by emetras-          #+#    #+#             */
+/*   Updated: 2022/06/12 23:40:42 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "libft.h"
 
-void args_check(int argc, char **argv)
+void	*ft_memset(void *s, int c, size_t n)
 {
+	char	*str;
+
+	str = (char *) s;
+	while (n > 0)
+	{
+		str[n - 1] = (char) c;
+		n--;
+	}
+	return (s);
 }

@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_args.c                                      :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/25 10:31:51 by emetras-         ###   ########.fr       */
+/*   Created: 2022/06/02 23:05:52 by emetras-          #+#    #+#             */
+/*   Updated: 2022/06/02 23:56:53 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
-
-void args_check(int argc, char **argv)
+int	ft_toupper(int c)
 {
+	if (c >= 'a' && c <= 'z')
+		return (c -32);
+	return (c);
 }
