@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/13 13:29:30 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/29 13:08:37 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void	var_init(t_num *var);
 double	f_map(double x, double i_min, double i_max, double o_min, double o_max);
 int		handle_hooks(t_data *data);
 void	args_check(t_data *data, int argc, char **argv);
+int		ft_isnumber(const char *str);
+double	ft_atof(const char *str);
 
 #endif

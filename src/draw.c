@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/13 13:45:15 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/29 13:19:33 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int f_fractal(t_data *data)
 		while (data->var.x++ < W_WIDTH)
 		{
 			cor = data->fractal_ptr(&data->var, data->var.x, data->var.y);
-			//cor = f_mandelbrot(&data->var, data->var.x, data->var.y);
 			if(cor)
-				img_pix_put(&data->img, data->var.x, data->var.y, f_map(cor, 0,49,50,0XFF));
+				img_pix_put(&data->img, data->var.x, data->var.y,
+				f_map(cor, 0,49,50,0XFF));
 			else
 				img_pix_put(&data->img, data->var.x, data->var.y, 0);
 		}

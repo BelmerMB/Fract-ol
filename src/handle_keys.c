@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:33 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/13 14:11:12 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:36:38 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int	handle_key(int key, t_data *data)
 	return (0);
 }
 
-//SEGFALT here	\/
 static int	handle_mouse(int key, int x, int y, t_data *data)
 {
 	if (key == SCROLL_DOWN && data->var.scale <= 5.0)

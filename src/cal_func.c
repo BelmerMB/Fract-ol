@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:30:45 by emetras-          #+#    #+#             */
-/*   Updated: 2022/11/27 17:12:55 by emetras-         ###   ########.fr       */
+/*   Updated: 2022/12/29 13:28:13 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int	f_julia(t_num *var, int x, int y)
 	index = 0;
 	var->r_ant = f_map(x, 0, W_HEIGHT, -var->scale, var->scale);
 	var->i_ant = f_map(y, 0, W_WIDTH, -var->scale, var->scale);
-	var->r_const = -0.75;
-	var->i_const =  0.07;
 	while (index++ < var->interations)
 	{
 		var->r = ((var->r_ant * var->r_ant) - (var->i_ant * var->i_ant));
