@@ -12,22 +12,21 @@
 
 #include "../header/ft_printf.h"
 
-static int ft_arguments(const char	*c, va_list	doguinho);
+static int	ft_arguments(const char	*c, va_list	doguinho);
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	dog;
-	int	i;
-	int	count;
+	int		i;
+	int		count;
 
 	i = 0;
 	count = 0;
 	va_start(dog, format);
-	while(format[i])
+	while (format[i])
 	{
-		if(format[i] != '%')
-			//I have to print a hole string at once to be more efficient
-			count += write(1, &format[i], 1);	//find another way, because Write is too slow.
+		if (format[i] != '%')
+			count += write(1, &format[i], 1);
 		else
 		{
 			i++;
@@ -38,18 +37,18 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-static int ft_arguments(const char *c, va_list doguinho)
+static int	ft_arguments(const char *c, va_list doguinho)
 {
-	int ax;
+	int	ax;
 
-	if(*c == '%')
+	if (*c == '%')
 		return (write(1, c, 1));
-	if(*c == 'c')  //put in to another file
+	if (*c == 'c')
 	{
 		ax = va_arg(doguinho, int);
 		return (write(1, &ax, 1));
 	}
-	if(*c == 's')
+	if (*c == 's')
 		return (ft_print_str(doguinho));
 	if (*c == 'd' || *c == 'i')
 		return (ft_print_dec(doguinho));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ptr_to_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 19:57:39 by emetras-          #+#    #+#             */
-/*   Updated: 2022/08/28 21:02:55 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:28:29 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_print_ptr(unsigned long int nbr)
 {
-	if(!nbr)
+	if (!nbr)
 	{
 		return (write(1, "(nil)", 5));
 	}
 	write(1, "0x", 2);
-	return(ft_print_hex(nbr, 'a') + 2);
+	return (ft_print_hex(nbr, 'a') + 2);
 }

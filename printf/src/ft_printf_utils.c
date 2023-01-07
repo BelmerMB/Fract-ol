@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 13:58:32 by emetras-          #+#    #+#             */
-/*   Updated: 2022/08/28 21:33:11 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:26:52 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_print_dec(va_list list)
 	return (i);
 }
 
-int	ft_print_unsigned (unsigned int nbr)
+int	ft_print_unsigned(unsigned int nbr)
 {
 	unsigned int	sz;
 	unsigned int	i;
@@ -50,10 +50,10 @@ int	ft_print_unsigned (unsigned int nbr)
 	sz = nbr;
 	i = 0;
 	if (!nbr)
-		return(write(1, "0", 1));
+		return (write(1, "0", 1));
 	while (sz)
 	{
-		sz = sz /10;
+		sz = sz / 10;
 		i++;
 	}
 	ptr = ft_calloc(i + 1, sizeof (unsigned int));
@@ -69,5 +69,3 @@ int	ft_print_unsigned (unsigned int nbr)
 	free (ptr);
 	return (i);
 }
-
-

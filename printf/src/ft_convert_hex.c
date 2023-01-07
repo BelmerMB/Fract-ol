@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_hex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 17:26:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/08/28 21:01:45 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:25:10 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,20 @@ static unsigned long int	ft_print(char *nbr_in_hexa);
 int	ft_print_hex(unsigned long int nbr, char upcase)
 {
 	unsigned long int	size_nbr;
-	char	*nbr_in_hexa; 
+	char				*nbr_in_hexa;
 
 	size_nbr = ft_size_nbr(nbr);
-	if(!size_nbr)
-	{
+	if (!size_nbr)
 		return (ft_print("0"));
-	}
 	nbr_in_hexa = (char *) malloc((size_nbr * sizeof(char)) + 1);
-	if(!nbr_in_hexa)
-	{
-		return(0);
-	}
+	if (!nbr_in_hexa)
+		return (0);
 	nbr_in_hexa[size_nbr] = '\0';
 	while (nbr)
 	{
 		size_nbr--;
 		nbr_in_hexa[size_nbr] = (nbr % 16) + '0';
-		if(nbr_in_hexa[size_nbr] > '9')
+		if (nbr_in_hexa[size_nbr] > '9')
 		{
 			nbr_in_hexa[size_nbr] = (nbr_in_hexa[size_nbr] - 58) + upcase;
 		}
@@ -51,7 +47,7 @@ static unsigned long int	ft_size_nbr(unsigned long int nbr)
 	unsigned long int	size;
 
 	size = 0;
-	while(nbr)
+	while (nbr)
 	{
 		size++;
 		nbr = nbr / 16;
