@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cal_func.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:30:45 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/29 13:28:13 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:19:16 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	f_mandelbrot(t_num *var, int x, int y)
 		var->i = (2 * var->r_ant * var->i_ant);
 		var->r_ant = var->r + var->r_const;
 		var->i_ant = var->i + var->i_const;
-		if (var->r_ant+var->i_ant > 4)
+		if (var->r_ant + var->i_ant > 4)
 			return (index);
 	}
 	return (0);
@@ -51,7 +51,7 @@ int	f_julia(t_num *var, int x, int y)
 		var->i = (2 * var->r_ant * var->i_ant);
 		var->r_ant = var->r + var->r_const;
 		var->i_ant = var->i + var->i_const;
-		if (var->r_ant+var->i_ant > 4)
+		if (var->r_ant + var->i_ant > 4)
 			return (index);
 	}
 	return (0);

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:44:59 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/13 13:30:25 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:20:52 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	p_mlx;
 

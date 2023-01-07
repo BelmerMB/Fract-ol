@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/29 13:08:37 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/06 01:19:37 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
-#define HEADER_H
-#include <mlx.h>
-#include <stdlib.h>
-#include <math.h>
-#include "./datas.h"
-#include "../printf/header/ft_printf.h"
+# define HEADER_H
+
+# include <mlx.h>
+# include <stdlib.h>
+# include <math.h>
+# include "./datas.h"
+# include "../printf/header/ft_printf.h"
 
 # define ESC 65307
 # define SCROLL_DOWN 4

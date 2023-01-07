@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   handle_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:11:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/29 13:52:37 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:21:43 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
-static void erro_msg(void);
 
-void args_check(t_data *data, int argc, char **argv)
+static void	erro_msg(void);
+
+void	args_check(t_data *data, int argc, char **argv)
 {
-	if(argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
+	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
 	{
 		data->fractal_ptr = f_mandelbrot;
 	}
-	else if((argc == 4) && (!ft_strncmp(argv[1], "julia", 5)))
+	else if ((argc == 4) && (!ft_strncmp(argv[1], "julia", 5)))
 	{
-		if(ft_isnumber(argv[2]) && ft_isnumber(argv[3]))
+		if (ft_isnumber(argv[2]) && ft_isnumber(argv[3]))
 		{
 			data->fractal_ptr = f_julia;
 			data->var.r_const = ft_atof(argv[2]);
@@ -34,7 +35,7 @@ void args_check(t_data *data, int argc, char **argv)
 		erro_msg();
 }
 
-static void erro_msg(void)
+static void	erro_msg(void)
 {
 	ft_printf("\033[0;31mInvalid arguments\033[0m\n");
 	ft_printf("Try: \"\033[0;32mmandelbrot\033[0m\"\n");

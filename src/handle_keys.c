@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_keys.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:33 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/13 14:36:38 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/06 01:20:56 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ static int	destroy_all(t_data *data)
 
 static int	handle_key(int key, t_data *data)
 {
-	if(key == ESC)
+	if (key == ESC)
 		destroy_all(data);
-	else 
 	return (0);
 }
 

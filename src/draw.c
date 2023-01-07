@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:31 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/29 13:19:33 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:21:06 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,15 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
 	while (i >= 0)
 	{
-		/* big endian, MSB is the leftmost bit */
 		if (img->endian != 0)
 			*pixel++ = (color >> i) & 0xFF;
-		/* little endian, LSB is the leftmost bit */
 		else
 			*pixel++ = (color >> (img->bpp - 8 - i)) & 0xFF;
 		i -= 8;
 	}
 }
 
-int f_fractal(t_data *data)
+int	f_fractal(t_data *data)
 {
 	int	cor;
 
@@ -42,9 +40,9 @@ int f_fractal(t_data *data)
 		while (data->var.x++ < W_WIDTH)
 		{
 			cor = data->fractal_ptr(&data->var, data->var.x, data->var.y);
-			if(cor)
+			if (cor)
 				img_pix_put(&data->img, data->var.x, data->var.y,
-				f_map(cor, 0,49,50,0XFF));
+					f_map(cor, 0, 49, 50, 0XFF));
 			else
 				img_pix_put(&data->img, data->var.x, data->var.y, 0);
 		}

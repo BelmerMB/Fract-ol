@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   datas.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emetras- <emetras-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
-/*   Updated: 2022/12/29 13:24:16 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:31:20 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATAS_H
-#define DATAS_H
+# define DATAS_H
 
 typedef struct s_img
 {
@@ -42,7 +42,7 @@ typedef struct s_data
 	void	*win;
 	t_img	img;
 	t_num	var;
-	int	(*fractal_ptr)(t_num *var, int x, int y);
+	int		(*fractal_ptr)(t_num *var, int x, int y);
 }	t_data;
 
 #endif
