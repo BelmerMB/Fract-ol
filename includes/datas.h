@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:48:19 by emetras-          #+#    #+#             */
-/*   Updated: 2023/01/02 20:31:20 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/07 02:30:55 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,14 @@ typedef struct s_data
 	t_num	var;
 	int		(*fractal_ptr)(t_num *var, int x, int y);
 }	t_data;
+
+typedef struct s_map
+{
+	double	x;
+	double	i_min;
+	double	i_max;
+	double	o_min;
+	double	o_max;
+}	t_map;
 
 #endif

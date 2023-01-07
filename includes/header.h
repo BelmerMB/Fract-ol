@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:46:26 by emetras-          #+#    #+#             */
-/*   Updated: 2023/01/06 01:19:37 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/07 02:30:01 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		f_mandelbrot(t_num *var, int x, int y);
 int		f_julia(t_num *var, int x, int y);
 void	window_init(t_data *p_mlx);
 void	var_init(t_num *var);
-double	f_map(double x, double i_min, double i_max, double o_min, double o_max);
+double	f_map(t_map data);
 int		handle_hooks(t_data *data);
 void	args_check(t_data *data, int argc, char **argv);
 int		ft_isnumber(const char *str);

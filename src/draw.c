@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:31 by emetras-          #+#    #+#             */
-/*   Updated: 2023/01/02 20:21:06 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/07 03:22:24 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	f_fractal(t_data *data)
 {
-	int	cor;
+	int	color;
 
 	data->var.y = 0;
 	while (data->var.y++ < W_HEIGHT)
@@ -39,10 +39,10 @@ int	f_fractal(t_data *data)
 		data->var.x = 0;
 		while (data->var.x++ < W_WIDTH)
 		{
-			cor = data->fractal_ptr(&data->var, data->var.x, data->var.y);
-			if (cor)
+			color = data->fractal_ptr(&data->var, data->var.x, data->var.y);
+			if (color)
 				img_pix_put(&data->img, data->var.x, data->var.y,
-					f_map(cor, 0, 49, 50, 0XFF));
+					f_map((t_map){color, 0, 49, 50, 0XFF}));
 			else
 				img_pix_put(&data->img, data->var.x, data->var.y, 0);
 		}

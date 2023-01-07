@@ -6,7 +6,7 @@
 /*   By: emetras- <emetras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:40:33 by emetras-          #+#    #+#             */
-/*   Updated: 2023/01/06 01:20:56 by emetras-         ###   ########.fr       */
+/*   Updated: 2023/01/07 03:07:11 by emetras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ static int	handle_key(int key, t_data *data)
 
 static int	handle_mouse(int key, int x, int y, t_data *data)
 {
-	if (key == SCROLL_DOWN && data->var.scale <= 5.0)
+	(void) x;
+	(void) y;
+	if (key == SCROLL_DOWN)
 	{
 		data->var.scale *= 1.1;
 		f_fractal(data);
 	}
-	else if (key == SCROLL_UP && data->var.scale >= 0.001)
+	else if (key == SCROLL_UP)
 	{
 		data->var.scale *= 0.9;
 		f_fractal(data);
