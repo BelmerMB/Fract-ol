@@ -8,7 +8,7 @@ LIBFT =		$(addprefix $(LIBFT_DIR)/, libftprintf.a)
 SRC_FILES =	cal_func.c draw.c window_init.c handle_keys.c fractol.c handle_args.c \
 ft_isfloat.c
 
-
+FLAGS_ERROR =	-Wall -Wextra -Werror
 SRC =		$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ =		$(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 CFLAGS =	-g3 -O3 -Imlx -Lmlx -lmlx -lXext -lX11 -lm -Wall -Wextra -Werror
@@ -23,7 +23,7 @@ $(LIBFT):
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
 	@mkdir -p $(OBJ_DIR)
-	cc -c $< -o $@
+	cc $(FLAGS_ERROR) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
