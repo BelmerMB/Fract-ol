@@ -26,6 +26,5 @@
 # Intro
 
 # Useful Links
-Useful site to learn all about fractal
-* [Fractal](https://pt.mathigon.org/course/fractals/mandelbrot)
+Useful site to learn all about fractal [Fractal](https://pt.mathigon.org/course/fractals/mandelbrot)
 * [Julia Set](https://en.wikipedia.org/wiki/Julia_set)
