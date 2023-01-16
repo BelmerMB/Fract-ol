@@ -8,8 +8,8 @@
 # Cloning
 
  ```
- git clone https://github.com/BelmerMB/fractais
- cd Minitalk
+ git clone https://github.com/BelmerMB/Fract-ol.git
+ cd Fract-ol
  ```
  
  # Compiling
