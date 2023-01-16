@@ -37,6 +37,6 @@ Fractal patterns are extremely familiar, since nature is full of fractals. For i
 * [Source](https://fractalfoundation.org/resources/what-are-fractals/)
 
 # Useful Links
-Useful [Site](https://pt.mathigon.org/course/fractals/introduction) to learn all about fractal 
+Useful Site [Pt-br](https://pt.mathigon.org/course/fractals/introduction) or [English](https://mathigon.org/course/fractals/introduction) to learn all about fractal 
 * Mandelbrot [Algorithm](http://warp.povusers.org/Mandelbrot/)
 * [Julia Set](https://en.wikipedia.org/wiki/Julia_set)
