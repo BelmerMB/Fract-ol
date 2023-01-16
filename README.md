@@ -4,6 +4,10 @@
 
  Fractol render program.
  
+ ![Mandelbrot](https://github.com/BelmerMB/Fract-ol/blob/main/img/mandelbrot_rsz.PNG) 
+ 
+ ![Julia](https://github.com/BelmerMB/Fract-ol/blob/main/img/julia.PNG)
+ 
 
 # Cloning
 
