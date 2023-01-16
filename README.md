@@ -2,7 +2,7 @@
 
  Fractol render program.
  
- [![Intro](https://img.shields.io/badge/Cursus-Minitalk-success?style=for-the-badge&logo=42)](https://github.com/BelmerMB/fractais)
+ [![Intro](https://img.shields.io/badge/Cursus-fractol-success?style=for-the-badge&logo=42)](https://github.com/BelmerMB/fractais)
 
 # Cloning
 
